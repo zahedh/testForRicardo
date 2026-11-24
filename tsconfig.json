@@ -1,0 +1,82 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./libs/dx-api"
+    },
+    {
+      "path": "./libs/controls-basic"
+    },
+    {
+      "path": "./libs/util-generic"
+    },
+    {
+      "path": "./libs/controls"
+    },
+    {
+      "path": "./libs/language"
+    },
+    {
+      "path": "./libs/assets"
+    },
+    {
+      "path": "./libs/core"
+    },
+    {
+      "path": "./apps/web"
+    },
+    {
+      "path": "./apps/app"
+    },
+    {
+      "path": "./libs/design-tokens"
+    },
+    {
+      "path": "./libs/ui-logic"
+    },
+    {
+      "path": "./libs/store"
+    },
+    {
+      "path": "./libs/api"
+    },
+    {
+      "path": "./libs/api-controller"
+    },
+    {
+      "path": "./libs/components"
+    },
+    {
+      "path": "./libs/dev-tools"
+    },
+    {
+      "path": "./libs/ui-state"
+    },
+    {
+      "path": "./libs/ui-navigation"
+    },
+    {
+      "path": "./libs/analytics"
+    },
+    {
+      "path": "./libs/ui-api-interaction"
+    },
+    {
+      "path": "./libs/util-intercom"
+    },
+    {
+      "path": "./libs/ui-web"
+    },
+    {
+      "path": "./libs/util-genesys"
+    },
+    {
+      "path": "./libs/e2e-shared"
+    },
+    {
+      "path": "./libs/remote-config"
+    }
+  ]
+}

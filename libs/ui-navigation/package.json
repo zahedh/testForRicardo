@@ -1,0 +1,27 @@
+{
+  "name": "@smarty-app/ui-navigation",
+  "version": "0.0.1",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@react-navigation/bottom-tabs": "*",
+    "@react-navigation/elements": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
+    "next": "*"
+  },
+  "nx": {
+    "tags": [
+      "type:ui",
+      "scope:shared"
+    ]
+  }
+}

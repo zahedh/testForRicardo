@@ -1,0 +1,269 @@
+.container {
+  max-width: theme('screens.xl');
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  display: none;
+}
+
+.main {
+  flex: 1;
+  padding: 1rem 0;
+  /* space for the bottom tabs */
+  padding-bottom: 5rem;
+  background-color: var(--color-background-primary);
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.tabList {
+  --tab-padding: 1.5rem;
+  --tab-gap: 2rem;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--tab-padding);
+  position: relative;
+  background-color: rgba(41, 46, 51, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  width: 100%;
+  gap: var(--tab-gap);
+}
+
+/* Below this the fixed icon size + gap + padding no longer fit in the pill,
+   pushing the last tab (Help) out past the pill's edge. Tighten spacing so
+   three 72px tabs keep fitting down to the smallest supported phone widths. */
+@media (max-width: 400px) {
+  .tabList {
+    --tab-padding: 0.75rem;
+    --tab-gap: 0.5rem;
+  }
+
+  .tabLink {
+    padding: 0 0.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .tabList {
+    --tab-padding: 0.5rem;
+  }
+}
+
+/* Animated highlight behind the selected tab. Every tab is the same width, so
+   its position follows from --active-index and --tab-count (set inline by the
+   layout). The
+   highlight extends into the list's side padding, leaving a 2px inset. */
+.tabList::before {
+  --tab-width: calc(
+    (100% - 2 * var(--tab-padding) - (var(--tab-count) - 1) * var(--tab-gap)) /
+      var(--tab-count)
+  );
+  --tab-extend: calc(var(--tab-padding) - 2px);
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: calc(
+    var(--tab-padding) + var(--active-index) *
+      (var(--tab-width) + var(--tab-gap)) - var(--tab-extend)
+  );
+  width: calc(var(--tab-width) + 2 * var(--tab-extend));
+  background-color: var(--color-background-tertiary);
+  border-radius: 50px;
+  transition: left 0.3s ease;
+  pointer-events: none;
+}
+
+.tabListNoActive::before {
+  display: none;
+}
+
+.tabItem {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.tabLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.5rem;
+  text-decoration: none;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navGroup {
+  position: relative;
+  display: flex;
+  width: 72px;
+  height: 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.navGroup > * {
+  position: relative;
+}
+
+.tabLink .navText {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.sidebarLinkActive .navText,
+.tabLinkActive .navText {
+  color: var(--color-foreground-accent);
+}
+
+.navIcon {
+  background-color: var(--color-foreground-primary);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+.tabLink .navIcon {
+  background-color: var(--color-brand-white-0);
+}
+
+.sidebarLinkActive .navIcon,
+.tabLinkActive .navIcon {
+  background-color: var(--color-foreground-accent);
+}
+
+@keyframes slideInFromLeftFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Use a sidebar layout on large screens */
+@media (min-width: theme('screens.lg')) {
+  .layout {
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+
+  .sidebar {
+    background-color: var(--color-background-primary);
+    display: block;
+    width: 92px;
+    flex-shrink: 0;
+    padding: 1rem;
+    min-height: 100vh;
+  }
+
+  .sidebarNav {
+    padding: 0;
+  }
+
+  .sidebarList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebarLink {
+    display: block;
+    height: 56px;
+    position: relative;
+    text-decoration: none;
+    width: 56px;
+  }
+
+  .sidebarLink .navGroup {
+    height: 56px;
+    width: 56px;
+  }
+
+  /* Circular highlight behind the selected sidebar item */
+  .sidebarLink .navGroup::before {
+    background-color: var(--color-background-tertiary);
+    border-radius: 50%;
+    content: '';
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .sidebarLinkActive .navGroup::before {
+    opacity: 1;
+  }
+
+  .sidebarLink .navText {
+    background-color: var(--color-background-tertiary);
+    border-radius: 0.75rem;
+    left: calc(100% + 8px);
+    opacity: 0;
+    padding: 0.75rem 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+    visibility: hidden;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  .sidebarLink:hover .navText,
+  .sidebarLink:focus-visible .navText {
+    color: var(--color-foreground-accent);
+    opacity: 1;
+    visibility: visible;
+    animation: slideInFromLeftFadeUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .main {
+    padding: 0;
+    padding-bottom: 2rem;
+  }
+
+  .bottomNav {
+    display: none;
+  }
+}

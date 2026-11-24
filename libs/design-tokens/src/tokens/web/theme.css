@@ -1,0 +1,130 @@
+/**
+ * Theme CSS Variables
+ *
+ * This file defines CSS custom properties for colors that change based on theme.
+ * Light theme is defined in :root, dark theme in .dark selector.
+ 
+ * ⚠️ AUTO-GENERATED FILE - DO NOT EDIT DIRECTLY
+ * This file is generated from colors.ts using scripts/generate-theme-css.ts
+ * To update, modify colors.ts and run: npm run generate:theme-css
+ */
+
+/* ===========================
+   LIGHT THEME (Default)
+   =========================== */
+
+:root {
+  /* Semantic Colors - Foreground */
+  --color-foreground-primary: #32373d;
+  --color-foreground-secondary: #5a666d;
+  --color-foreground-tertiary: #bebec0;
+  --color-foreground-accent: #229b93;
+  --color-foreground-warning: #e00000;
+  --color-foreground-promo: #f2c36b;
+
+  /* Semantic Colors - Background */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #F2F2F2;
+  --color-background-tertiary: #e2e2e2;
+  --color-background-accent: #8fd6c9;
+  --color-background-promo: #ffd67d;
+
+  /* Semantic Colors - Stroke */
+  --color-stroke-strong: #5a666d;
+  --color-stroke-medium: #bebec0;
+
+  /* Semantic Colors - Overlay */
+  --color-overlay-modal: rgba(255, 255, 255, 0.7);
+  /* Core Brand Colors */
+  --color-brand-slate-800: #32373d;
+  --color-brand-teal-100: #e4f5f2;
+  --color-brand-teal-800: #8fd6c9;
+  --color-brand-white-0: #ffffff;
+  --color-brand-blue-100: #e1f2ff;
+  --color-brand-blue-800: #82c7ff;
+  --color-brand-pink-100: #fae7f8;
+  --color-brand-pink-800: #f0b5e8;
+  --color-brand-purple-100: #e3dff9;
+  --color-brand-purple-800: #b8aef1;
+
+  /* Core Accent Palette Colors */
+  --color-accent-teal-850: #2bb5a7;
+  --color-accent-teal-900: #229b93;
+  --color-accent-slate-100: #e2e2e2;
+  --color-accent-slate-200: #bebec0;
+  --color-accent-slate-600: #5a666d;
+  --color-accent-slate-700: #3c454a;
+  --color-accent-slate-900: #292e33;
+  --color-accent-yellow-100: #fff8ea;
+  --color-accent-yellow-800: #ffd67d;
+  --color-accent-wave-100: #cce8f1;
+  --color-accent-wave-800: #17b5d9;
+  --color-accent-aqua-100: #d3f6fb;
+  --color-accent-aqua-800: #92e9f6;
+  --color-accent-cornflour-100: #cddcf9;
+  --color-accent-cornflour-800: #8dace5;
+  --color-accent-ocean-100: #e3ecff;
+  --color-accent-ocean-800: #aecaff;
+  --color-accent-iceberg-100: #dcedff;
+  --color-accent-iceberg-800: #b3cde7;
+  --color-accent-sky-100: #e0f5f8;
+  --color-accent-sky-800: #a9d4da;
+  --color-accent-sandcastle-100: #ffeac1;
+  --color-accent-sandcastle-800: #f2c36b;
+  --color-accent-peach-100: #fcf2e9;
+  --color-accent-peach-800: #fcd8ae;
+  --color-accent-peony-100: #ffdff2;
+  --color-accent-peony-800: #df90be;
+  --color-accent-rose-100: #fcecf0;
+  --color-accent-rose-800: #f8c4d1;
+  --color-accent-petal-100: #ffe4ed;
+  --color-accent-petal-800: #f4a8c2;
+  --color-accent-lavander-100: #eedfff;
+  --color-accent-lavander-800: #ceb1ed;
+  --color-accent-lilac-100: #f4d5f8;
+  --color-accent-lilac-800: #e496ee;
+  --color-accent-jade-100: #d7fae7;
+  --color-accent-jade-800: #79d598;
+  --color-accent-sage-100: #c7f6c3;
+  --color-accent-sage-800: #90df89;
+  --color-accent-olive-100: #edf4db;
+  --color-accent-olive-800: #cddf99;
+  --color-accent-pistachio-100: #e9ffd4;
+  --color-accent-pistachio-800: #cbfd9b;
+  --color-accent-lime-100: #f4ffdd;
+  --color-accent-lime-800: #dbff8e;
+  --color-accent-leaf-100: #e4ecc8;
+  --color-accent-leaf-800: #c1d86c;
+  --color-accent-mandarine-100: #ffeae1;
+  --color-accent-mandarine-800: #ff9569;
+  --color-accent-coral-100: #ffe0e4;
+  --color-accent-coral-800: #ff7c8c;
+  --color-accent-red-100: #fad6d6;
+  --color-accent-red-800: #e00000;}
+
+/* ===========================
+   DARK THEME
+   =========================== */
+
+.dark {
+  /* Semantic Colors - Foreground */
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #bebec0;
+  --color-foreground-tertiary: #32373d;
+  --color-foreground-accent: #8fd6c9;
+  --color-foreground-warning: #ff7c8c;
+  --color-foreground-promo: #f2c36b;
+
+  /* Semantic Colors - Background */
+  --color-background-primary: #292e33;
+  --color-background-secondary: #32373d;
+  --color-background-tertiary: #3c454a;
+  --color-background-accent: #8fd6c9;
+  --color-background-promo: #ffd67d;
+
+  /* Semantic Colors - Stroke */
+  --color-stroke-strong: #bebec0;
+  --color-stroke-medium: #5a666d;
+
+  /* Semantic Colors - Overlay */
+  --color-overlay-modal: rgba(60, 69, 74, 0.8);}

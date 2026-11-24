@@ -1,0 +1,8 @@
+.expo
+dist/
+web-build/
+
+/ios/
+/android/
+app-env.local
+.env.local

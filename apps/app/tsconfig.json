@@ -1,0 +1,40 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": ["nativewind-env.d.ts"],
+  "references": [
+    {
+      "path": "../../libs/dev-tools"
+    },
+    {
+      "path": "../../libs/util-generic"
+    },
+    {
+      "path": "../../libs/language"
+    },
+    {
+      "path": "../../libs/core"
+    },
+    {
+      "path": "../../libs/controls-basic"
+    },
+    {
+      "path": "../../libs/design-tokens"
+    },
+    {
+      "path": "../../libs/controls"
+    },
+    {
+      "path": "../../libs/components"
+    },
+    {
+      "path": "../../libs/api-controller"
+    },
+    {
+      "path": "../../libs/ui-navigation"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}

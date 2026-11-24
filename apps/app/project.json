@@ -1,0 +1,98 @@
+{
+  "name": "app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/app/src",
+  "projectType": "application",
+  "// targets": "to see all targets run: nx show project app --web",
+  "targets": {
+    "sync-deps": {
+      "executor": "@nx/expo:sync-deps",
+      "options": {}
+    },
+    "lint-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx run-many --target=lint --max-warnings=0"]
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -b tsconfig.app.json"],
+        "cwd": "apps/app",
+        "forwardAllArgs": false
+      },
+      "dependsOn": ["^build", "ensure-symlink"]
+    },
+    "start": {
+      "executor": "@nx/expo:start",
+      "continuous": true,
+      "defaultConfiguration": "staging",
+      "configurations": {
+        "development": {},
+        "staging": {},
+        "production": {}
+      },
+      "options": { 
+        "port": 8081 
+      }
+    },
+    "prebuild": {
+      "executor": "@nx/expo:prebuild",
+      "defaultConfiguration": "staging",
+      "configurations": {
+        "development": {},
+        "staging": {},
+        "production": {}
+      },
+      "options": {}
+    },
+    "pod-install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx pod-install",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "run-ios": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "ios"
+      },
+      "defaultConfiguration": "staging",
+      "configurations": {
+        "development": {},
+        "staging": {},
+        "production": {}
+      },
+      "dependsOn": ["sync-deps"]
+    },
+    "run-android": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "android"
+      },
+      "defaultConfiguration": "staging",
+      "configurations": {
+        "development": {},
+        "staging": {},
+        "production": {}
+      },
+      "dependsOn": ["sync-deps"]
+    },
+    "test-ios-bundle-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx expo export --platform ios --clear",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test-android-bundle-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx expo export --platform android --clear",
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+export const commonStrings = {
+  ok: 'OK',
+  okay: 'Okay',
+  back: 'Back',
+  close: 'Close',
+  emailAddress: 'Email address',
+  accountTab: 'Account',
+  password: 'Password',
+  error: 'Error',
+  changeAddressTextInput: 'Address',
+  dateInputInvalidDay: 'Day must be between 1 and 31',
+  dateInputInvalidMonth: 'Month must be between 1 and 12',
+  dateInputInvalidYear: 'Please enter a valid year',
+  dateInputInvalidDate: 'Please enter a valid date',
+};

@@ -1,0 +1,25 @@
+@import '../../../../libs/design-tokens/src/tokens/web/theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+}
+
+:root {
+  font-family: sans-serif;
+}
+
+/* Always reserve the vertical scrollbar's width, even on pages short enough that
+   nothing scrolls. Without this, navigating between a scrolling page and a
+   non-scrolling one changes the page's visible width, which shows up as a
+   horizontal jump in anything sized from the viewport (e.g. the dashboard's
+   bottom tab bar, which uses 100vw). */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@smarty3/web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --build"
+  },
+  "nx": {
+    "tags": [
+      "type:app"
+    ],
+    "targets": {
+      "dx-dev-proxy": {
+        "command": "node scripts/dx-dev-proxy.mjs",
+        "options": {
+          "cwd": "{workspaceRoot}"
+        },
+        "continuous": true
+      },
+      "dev": {},
+      "build": {
+        "defaultConfiguration": "development",
+        "outputs": [
+          "{workspaceRoot}/apps/web/.next/!(cache|dev)/**/*",
+          "{workspaceRoot}/apps/web/.next/!(cache|dev)"
+        ],
+        "configurations": {
+          "staging": {},
+          "development": {},
+          "production": {},
+          "dxdemo": {}
+        }
+      }
+    }
+  }
+}

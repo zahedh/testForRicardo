@@ -1,0 +1,18 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaryDefinitions": [
+    {
+      "name": "workspace-words",
+      "path": "./.dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["workspace-words"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.git/**"
+  ]
+}

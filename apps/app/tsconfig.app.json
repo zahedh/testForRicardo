@@ -1,0 +1,68 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["node"],
+    "rootDir": ".",
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noUnusedLocals": false,
+    "lib": ["dom"],
+    "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
+    "declarationMap": false
+  },
+  "files": ["../../node_modules/@nx/expo/typings/svg.d.ts"],
+  "exclude": [
+    "out-tsc",
+    "dist",
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.js",
+    "src/**/*.spec.js",
+    "src/**/*.test.jsx",
+    "src/**/*.spec.jsx",
+    "src/test-setup.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "modules/*/index.ts"
+  ],
+  "references": [
+    {
+      "path": "../../libs/dev-tools/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/util-generic/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/language/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/core/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/controls-basic/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/design-tokens/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/controls/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/components/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/api-controller/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/ui-navigation/tsconfig.lib.json"
+    }
+  ]
+}
